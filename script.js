@@ -33,3 +33,44 @@ if ('IntersectionObserver' in window) {
   }, { threshold: .08 });
   document.querySelectorAll('h1,.hero-bottom,.section-heading,.case,.pet-project,.skill-group,.education-intro,.education-records article,.photo-gallery,.contact-email').forEach(element => entrance.observe(element));
 }
+
+// Native horizontal scrolling remains available without JavaScript.
+const sportsTrack = document.querySelector('.carousel-track');
+if (sportsTrack && !sportsTrack.closest('[hidden]')) {
+  const slides = [...sportsTrack.querySelectorAll('.sports-slide')];
+  const controls = document.querySelector('.carousel-controls');
+  const previous = controls.querySelector('.carousel-prev');
+  const next = controls.querySelector('.carousel-next');
+  const status = controls.querySelector('.carousel-status');
+  let current = 0;
+  function updateCarousel() {
+    const maximum = sportsTrack.scrollWidth - sportsTrack.clientWidth;
+    const position = sportsTrack.scrollLeft;
+    current = slides.reduce((best, slide, index) => Math.abs(slide.offsetLeft - slides[0].offsetLeft - position) < Math.abs(slides[best].offsetLeft - slides[0].offsetLeft - position) ? index : best, 0);
+    if (position >= maximum - 2) current = slides.length - 1;
+    status.textContent = `${current + 1} / ${slides.length}`;
+    previous.disabled = position <= 2;
+    next.disabled = position >= maximum - 2;
+  }
+  function movePhoto(direction) {
+    const gap = parseFloat(getComputedStyle(sportsTrack).columnGap) || 0;
+    const distance = slides[0].getBoundingClientRect().width + gap;
+    sportsTrack.scrollBy({ left: direction * distance, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  }
+  previous.addEventListener('click', () => movePhoto(-1));
+  next.addEventListener('click', () => movePhoto(1));
+  sportsTrack.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault(); movePhoto(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+  let scheduled = false;
+  sportsTrack.addEventListener('scroll', () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => { updateCarousel(); scheduled = false; });
+  }, { passive: true });
+  window.addEventListener('resize', updateCarousel);
+  controls.hidden = slides.length < 2;
+  updateCarousel();
+}

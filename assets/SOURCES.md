@@ -9,8 +9,17 @@ Brand marks identify the actual organisations and contact destinations in this p
 - **Сбер:** current circle/checkmark SVG from the official Salute developers Plasma library, revision `d335a3bb78b758a1d23b684f5e54176fc368b087`, `packages/plasma-icons/src/scalable/Icon.svg.24/Sber.svg`. License included in `logos/SBER-LICENSE.txt`. https://github.com/salute-developers/plasma
 - **МГУ:** existing main-building silhouette `gzlogo.png` from the MSU thesis template, revision `dea5350bd0c4cac6f72e1554421e31d9cb66787d`. This is a building mark, not a claim that the file is the university's official seal. https://github.com/SweetVishnya/msu-thesis
 
-## Pending personal content
+## Portfolio media and current changes
 
-The two `.pet-project` articles in `index.html` intentionally await the owner's screenshots, descriptions and repository links. They have no fabricated project claims or dead repository buttons.
+- `photos/maria-portrait.png`: background removed from the user's supplied portrait with the image editing tool. Transparent PNG; original generated output is retained outside the repository.
+- `projects/documentation.png` and `projects/demo-shop.png`: browser screenshots of the user's actual repositories served locally. They are not reproductions of the attached screenshots. Repository links: https://github.com/novmar03/CloudPayments_documentation and https://github.com/novmar03/demo-shop.
+- `logos/cloudpayments.svg`: unmodified circular brand SVG from `CloudPayments_documentation/static/favicon.svg`. Replaces the older full wordmark in the experience section.
+- `favicon.svg`: custom vector monogram combining the Cyrillic initials М and Н, designed for this portfolio.
 
-The `.photo-gallery` in the «Вне работы» section awaits the owner's photographs. Replace its three empty slots with `<figure><img ...></figure>` elements. The grid supports a large leading photograph and smaller adjacent images, stacking on mobile. Choose `object-position` per supplied photo to preserve the subject. Do not substitute stock photographs for the owner’s life.
+## Pending original photographs
+
+The chat shows the supplied photographs but did not expose their original files to the execution workspace. Sports images and the graduation image must be copied from an uploaded archive; do not generate replacements for them.
+
+The carousel is hidden in the published page until the original files are available. Remove its `hidden` attribute after adding the photographs. It has seven prepared figures, identified by `data-photo`: `running-city`, `rowing`, `snowboarding`, `running-half`, `running-night`, `team-podium`, `team-msu`. Replace each `.sports-photo-pending` with the corresponding original image. Preserve whole frames for rowing and group photos. `object-fit: contain` avoids cropping people. Native scroll snapping supports touch and no-JavaScript use; buttons and keyboard controls are implemented.
+
+Add the supplied diploma photograph in the education section using `.education-photo`. The original markup has not yet been replaced with a broken image reference.

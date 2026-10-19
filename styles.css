@@ -66,7 +66,7 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 .job-panel + .job-panel { margin-top: 32px; }
 .job-heading { display: grid; grid-template-columns: 220px minmax(0, 1fr) 230px; gap: 40px; align-items: start; margin-bottom: 56px; }
 .job-brand p { margin-top: 10px; font-size: var(--small); color: var(--secondary); }
-.cloud-logo { background: #fff; padding: 7px; object-fit: contain; object-position: left; width: 148px; height: 55px; }
+.cloud-logo { width: 48px; height: 48px; object-fit: contain; }
 .sber-brand { display: flex; align-items: center; gap: 12px; font-size: var(--lead); font-weight: 600; }
 .job-heading h3 { margin: 0 0 10px; }
 .job-heading > div > p, .job-date { font-size: var(--small); }
@@ -215,3 +215,53 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 @keyframes enter-section { from { opacity: .35; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .arriving { animation: enter-section 520ms cubic-bezier(.22,1,.36,1) both; }
 @media (prefers-reduced-motion: reduce) { .arriving { animation: none; } }
+
+/* Portrait and project media share the existing typographic grid. */
+.hero-main { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 32px; align-items: end; }
+.hero-copy { padding-bottom: 24px; }
+.hero h1 { font-size: clamp(72px, 8.3vw, 120px); }
+.hero-bottom { display: block; margin-top: 32px; }
+.hero .button { margin-top: 28px; }
+.hero-description { max-width: 58ch; }
+.hero-portrait { align-self: stretch; display: flex; align-items: end; justify-content: center; min-width: 0; }
+.hero-portrait img { display: block; width: 100%; height: auto; max-height: 670px; object-fit: contain; object-position: bottom; }
+.hero-footer { margin-top: 28px; }
+.project-preview { overflow: hidden; padding: 0; }
+.project-preview:has(img) { background: #fff; }
+.project-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.project-preview > p { padding-inline: 24px; text-align: center; }
+.project-caption > p { color: var(--ink); font-size: var(--body); line-height: 1.6; max-width: 60ch; }
+.project-repository { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; font-size: var(--small); margin-top: 16px; }
+.project-repository img { filter: invert(1); }
+.project-repository:hover { text-decoration: underline; text-underline-offset: 6px; }
+.education-photo { margin: 0; }
+.education-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
+.sports-carousel { --slide-width: min(48%, 600px); }
+.carousel-track { display: flex; overflow-x: auto; gap: 24px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--secondary) var(--surface); padding-bottom: 16px; }
+.carousel-track:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
+.sports-slide { flex: 0 0 var(--slide-width); margin: 0; min-width: 0; scroll-snap-align: start; }
+.sports-slide img, .sports-photo-pending { width: 100%; aspect-ratio: 4/5; object-fit: contain; background: var(--paper); }
+.sports-photo-pending { display: grid; place-items: center; color: var(--secondary); font-size: var(--lead); }
+.sports-slide figcaption { margin-top: 16px; font-size: var(--body); }
+.carousel-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 24px; }
+.carousel-status { font-variant-numeric: tabular-nums; font-size: var(--small); }
+.carousel-buttons { display: flex; gap: 12px; }
+.carousel-buttons button { display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: var(--ink); color: var(--paper); transition: transform .2s; }
+.carousel-buttons button:hover:not(:disabled) { transform: translateY(-2px); }
+.carousel-buttons button:disabled { opacity: .3; cursor: default; }
+@media (max-width: 1050px) {
+  .hero-main { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 24px; }
+  .hero h1 { font-size: clamp(64px, 8.3vw, 90px); }
+  .hero-portrait img { max-height: 600px; }
+}
+@media (max-width: 650px) {
+  .hero-main { grid-template-columns: 1fr; gap: 24px; }
+  .hero h1 { font-size: clamp(64px, 18vw, 112px); }
+  .hero-copy { padding-bottom: 0; }
+  .hero-portrait { max-height: 450px; overflow: hidden; }
+  .hero-portrait img { width: min(100%, 360px); max-height: 450px; }
+  .sports-carousel { --slide-width: 88%; }
+  .carousel-track { gap: 16px; }
+  .project-preview { aspect-ratio: 16/10; }
+}
+@media (prefers-reduced-motion: reduce) { .carousel-buttons button { transition: none; } }
