@@ -91,7 +91,7 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 .skill-group h3 { margin-bottom: 24px; }
 .skill-group ul { padding: 0; margin: 0; list-style: none; }
 .skill-group li { margin-top: 12px; }
-.education { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.education { display: grid; grid-template-columns: .85fr 1fr .78fr; gap: 48px; align-items: center; }
 .education-intro h2 { margin-bottom: 40px; }
 .msu-logo { filter: invert(1); mix-blend-mode: screen; margin-bottom: 24px; object-fit: contain; object-position: left; }
 .education-intro h3 { margin-bottom: 12px; }
@@ -139,7 +139,8 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
   .case:first-child .case-result { min-height: 0; }
   .cases { gap: 40px 32px; }
   .skills-layout { gap: 32px; }
-  .education { gap: 40px; }
+  .education { grid-template-columns: .9fr 1fr; gap: 40px; }
+  .education-photo { grid-column: 1 / -1; width: min(100%, 520px); justify-self: center; }
   .photo-slot { min-height: 300px; }
   .photo-slot-main { padding: 24px; }
 }
@@ -177,6 +178,7 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
   .skill-group ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
   .skill-group li { margin: 0; }
   .education { grid-template-columns: 1fr; gap: 40px; }
+  .education-photo { grid-column: auto; width: 100%; }
   .education-intro h2 { margin-bottom: 32px; }
   .education-records { padding-top: 0; gap: 32px; }
   .photo-gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -236,6 +238,7 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 .project-repository:hover { text-decoration: underline; text-underline-offset: 6px; }
 .education-photo { margin: 0; }
 .education-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center; }
+.education-photo figcaption { margin-top: 14px; font-size: var(--small); color: var(--secondary); }
 .sports-carousel { --slide-width: min(48%, 600px); }
 .carousel-track { display: flex; overflow-x: auto; gap: 24px; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--secondary) var(--surface); padding-bottom: 16px; }
 .carousel-track:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }

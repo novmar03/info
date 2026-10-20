@@ -16,10 +16,12 @@ Brand marks identify the actual organisations and contact destinations in this p
 - `logos/cloudpayments.svg`: unmodified circular brand SVG from `CloudPayments_documentation/static/favicon.svg`. Replaces the older full wordmark in the experience section.
 - `favicon.svg`: custom vector monogram combining the Cyrillic initials М and Н, designed for this portfolio.
 
-## Pending original photographs
+## Personal photographs
 
-The chat shows the supplied photographs but did not expose their original files to the execution workspace. Sports images and the graduation image must be copied from an uploaded archive; do not generate replacements for them.
+The owner supplied the original personal photographs in `фото.zip` on 20 October 2026. Seven JPEG files were auto-oriented and encoded as WebP at quality 84. The original framing is preserved.
 
-The carousel is hidden in the published page until the original files are available. Remove its `hidden` attribute after adding the photographs. It has seven prepared figures, identified by `data-photo`: `running-city`, `rowing`, `snowboarding`, `running-half`, `running-night`, `team-podium`, `team-msu`. Replace each `.sports-photo-pending` with the corresponding original image. Preserve whole frames for rowing and group photos. `object-fit: contain` avoids cropping people. Native scroll snapping supports touch and no-JavaScript use; buttons and keyboard controls are implemented.
+- `horosho.webp` is the main portrait.
+- `diplom.webp` appears in Education.
+- `marathon.webp`, `greblya.webp`, `snowboard.webp`, `nochnoy.webp`, and `msuteam.webp` appear in the «Вне работы» carousel.
 
-Add the supplied diploma photograph in the education section using `.education-photo`. The original markup has not yet been replaced with a broken image reference.
+Native scroll snapping supports touch and no-JavaScript use; buttons and keyboard controls are implemented. `object-fit: contain` preserves the full frames, including people in the rowing and group photographs.
