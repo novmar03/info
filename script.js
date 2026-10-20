@@ -1,23 +1,4 @@
-// All experience remains readable without JavaScript.
-const switcher = document.querySelector('.team-switcher');
-const teamButtons = [...document.querySelectorAll('[data-select-team]')];
-const teamPanels = [...document.querySelectorAll('[data-team]')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-function selectTeam(id) {
-  teamButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.selectTeam === id)));
-  teamPanels.forEach(panel => {
-    panel.hidden = panel.dataset.team !== id;
-    if (!panel.hidden && !reducedMotion.matches && panel.animate) {
-      panel.animate([{ opacity: .5, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 240, easing: 'ease-out' });
-    }
-  });
-}
-if (switcher && teamPanels.length) {
-  switcher.hidden = false;
-  selectTeam('0');
-  teamButtons.forEach(button => button.addEventListener('click', () => selectTeam(button.dataset.selectTeam)));
-}
 
 // Animate visible content without leaving anything hidden if scripting is unavailable.
 if ('IntersectionObserver' in window) {
@@ -74,3 +55,19 @@ if (sportsTrack && !sportsTrack.closest('[hidden]')) {
   controls.hidden = slides.length < 2;
   updateCarousel();
 }
+
+// A non-blocking contact panel appears only beyond work experience.
+const contactFloat = document.querySelector('.contact-float');
+const experience = document.querySelector('#experience');
+const contact = document.querySelector('#contact');
+let contactDismissed = false;
+function updateContactFloat() {
+  contactFloat.hidden = contactDismissed || experience.getBoundingClientRect().bottom > 0 || contact.getBoundingClientRect().top < window.innerHeight;
+}
+contactFloat.querySelector('button').addEventListener('click', () => {
+  contactDismissed = true;
+  updateContactFloat();
+});
+window.addEventListener('scroll', updateContactFloat, { passive: true });
+window.addEventListener('resize', updateContactFloat);
+updateContactFloat();

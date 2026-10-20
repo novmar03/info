@@ -268,3 +268,77 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
   .project-preview { aspect-ratio: 16/10; }
 }
 @media (prefers-reduced-motion: reduce) { .carousel-buttons button { transition: none; } }
+
+/* Personal card, hardware previews and an open editorial work history. */
+.hero-main { align-items: center; gap: 64px; }
+.profile-card { width: 100%; max-width: 430px; justify-self: end; border: 1px solid #d9dcea; border-radius: 24px; overflow: hidden; background: #f3f3f9; color: #171b2b; }
+.profile-brand { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 22px 12px; background: #306bfa; color: white; font-size: 19px; font-weight: 600; letter-spacing: -.04em; }
+.profile-brand img { filter: grayscale(1) brightness(0) invert(1); }
+.brand-divider { font-weight: 400; opacity: .7; margin-inline: 3px; }
+.business-brand { font-size: 17px; white-space: nowrap; }
+.profile-body { padding: 32px 24px; text-align: center; }
+.profile-photo { width: 230px; height: 250px; object-fit: cover; object-position: center 30%; border-radius: 18px; margin: 0 auto 24px; border: 3px solid #d9e1f6; }
+.profile-body h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.04em; }
+.profile-body > p { margin-top: 12px; color: #727583; font-size: 21px; }
+.profile-socials { display: flex; justify-content: center; gap: 28px; margin-top: 30px; }
+.profile-socials a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16px; }
+.profile-socials a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.project-preview, .project-preview:has(img) { background: transparent; overflow: visible; padding: 24px 0 10px; display: block; aspect-ratio: auto; }
+.laptop-screen { position: relative; margin-inline: 6%; padding: 12px 10px 17px; border: 1px solid #777b84; border-radius: 15px 15px 3px 3px; background: #101114; box-shadow: 0 20px 35px #0003; }
+.laptop-screen::before { content: ''; position: absolute; top: 4px; left: 50%; width: 4px; height: 4px; background: #414651; border-radius: 50%; }
+.laptop-screen img { aspect-ratio: 16/10; height: auto; object-fit: cover; border-radius: 3px; }
+.laptop-base { position: relative; height: 15px; background: linear-gradient(#d7d9de, #8e929b 55%, #555962); border-radius: 2px 2px 50% 50% / 2px 2px 90% 90%; box-shadow: 0 14px 20px #0004; }
+.laptop-base::before { content: ''; position: absolute; top: 0; left: 42%; width: 16%; height: 5px; background: #777c86; border-radius: 0 0 6px 6px; }
+.experience { background: #202328; }
+.job-panel { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 70px; padding: 44px 0; background: transparent; border-top: 1px solid #ffffff26; }
+.job-panel + .job-panel { margin-top: 0; }
+.job-panel:last-child { padding-bottom: 0; }
+.job-heading { display: flex; flex-direction: column; gap: 24px; margin: 0; }
+.job-heading h3 { font-size: 20px; }
+.job-heading > div > p { color: var(--secondary); }
+.job-date { text-align: left; font-size: 13px; margin: 0; }
+.cloud-logo { width: 36px; height: 36px; }
+.job-brand .sber-brand { font-size: 22px; }
+.cases { display: block; }
+.case, .case:first-child { display: grid; grid-template-columns: minmax(0, 1fr) 185px; align-items: start; gap: 32px; padding: 0 0 28px; }
+.case + .case { padding-top: 28px; border-top: 1px solid #ffffff14; }
+.case:last-child { padding-bottom: 0; }
+.case:not(:has(.case-result)) { grid-template-columns: 1fr; }
+.case h4 { font-size: 21px; margin-bottom: 10px; letter-spacing: -.025em; }
+.case-copy p { color: var(--secondary); font-size: 15px; line-height: 1.7; }
+.case-result, .case:first-child .case-result { padding: 0; margin: 0; min-height: 0; background: none; gap: 9px; }
+.case-result strong, .case:first-child .case-result strong { font-size: 27px; letter-spacing: -.04em; font-weight: 550; }
+.case-result span { color: var(--secondary); font-size: 12px; line-height: 1.5; }
+.carousel-track { align-items: stretch; }
+.sports-slide img { height: clamp(300px, 36vw, 480px); aspect-ratio: auto; object-fit: cover; border-radius: 8px; }
+.sports-slide[data-photo="snowboarding"] img { object-position: center 60%; }
+.sports-slide[data-photo="running-night"] img { object-position: center 60%; }
+.contact-float { position: fixed; z-index: 20; bottom: max(24px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 20px; width: max-content; max-width: calc(100% - 24px); padding: 14px 18px 14px 26px; border-radius: 100px; background: #2863ed; color: white; box-shadow: 0 12px 48px #0005; }
+.contact-float > span { font-size: 18px; font-weight: 550; }
+.contact-float a { display: flex; align-items: center; gap: 9px; border: 1px solid #ffffff60; padding: 12px 18px; border-radius: 100px; font-size: 15px; }
+.contact-float a:hover { background: #ffffff18; }
+.contact-float img { filter: invert(1); }
+.contact-float button { border: 0; background: transparent; color: white; width: 32px; height: 44px; font-size: 25px; }
+@media (max-width: 1050px) {
+  .hero-main { gap: 32px; }
+  .profile-brand { font-size: 15px; gap: 5px; }
+  .business-brand { font-size: 14px; }
+  .job-panel { grid-template-columns: 220px minmax(0, 1fr); gap: 32px; }
+  .case, .case:first-child { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 650px) {
+  .profile-card { justify-self: center; margin-top: 12px; }
+  .profile-brand { font-size: 18px; }
+  .business-brand { font-size: 15px; }
+  .profile-body { padding: 28px 18px; }
+  .profile-body h2 { font-size: 26px; }
+  .job-panel { grid-template-columns: 1fr; gap: 32px; margin-inline: 0; padding: 32px 0; }
+  .job-heading { gap: 16px; }
+  .case:first-child .case-result { margin: 0; padding: 0; }
+  .sports-slide img { height: 360px; }
+  .contact-float { gap: 8px; padding: 10px 10px 10px 16px; }
+  .contact-float > span { font-size: 13px; max-width: 90px; line-height: 1.3; }
+  .contact-float a { padding: 11px; font-size: 12px; gap: 6px; }
+  .contact-float button { width: 24px; }
+}
+@media print { .contact-float { display: none; } }
