@@ -273,11 +273,11 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 .hero-main { align-items: center; gap: 64px; }
 .profile-card { width: 100%; max-width: 430px; justify-self: end; border: 1px solid #d9dcea; border-radius: 24px; overflow: hidden; background: #f3f3f9; color: #171b2b; }
 .profile-brand { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 22px 12px; background: #306bfa; color: white; font-size: 19px; font-weight: 600; letter-spacing: -.04em; }
-.profile-brand img { filter: grayscale(1) brightness(0) invert(1); }
+.profile-brand img { width: 40px; height: 40px; }
 .brand-divider { font-weight: 400; opacity: .7; margin-inline: 3px; }
 .business-brand { font-size: 17px; white-space: nowrap; }
 .profile-body { padding: 32px 24px; text-align: center; }
-.profile-photo { width: 230px; height: 250px; object-fit: cover; object-position: center 30%; border-radius: 18px; margin: 0 auto 24px; border: 3px solid #d9e1f6; }
+.profile-photo { width: 100%; height: auto; aspect-ratio: 1 / 1.05; object-fit: cover; object-position: center 30%; border-radius: 18px; margin: 0 auto 24px; border: 3px solid #d9e1f6; }
 .profile-body h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.04em; }
 .profile-body > p { margin-top: 12px; color: #727583; font-size: 21px; }
 .profile-socials { display: flex; justify-content: center; gap: 28px; margin-top: 30px; }
@@ -342,3 +342,4 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
   .contact-float button { width: 24px; }
 }
 @media print { .contact-float { display: none; } }
+.site-footer { padding-bottom: 124px; }

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>Мария Новикова</title>
   <rect width="64" height="64" rx="16" fill="#2d5ce8"/>
-  <path d="M13 44V20l12 14 12-14v24M50 20v24M37 32h13" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 45V19l15 18 15-18v26" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

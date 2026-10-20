@@ -56,13 +56,12 @@ if (sportsTrack && !sportsTrack.closest('[hidden]')) {
   updateCarousel();
 }
 
-// A non-blocking contact panel appears only beyond work experience.
+// Keep contact available from the end of projects through the footer.
 const contactFloat = document.querySelector('.contact-float');
-const experience = document.querySelector('#experience');
-const contact = document.querySelector('#contact');
+const projects = document.querySelector('#projects');
 let contactDismissed = false;
 function updateContactFloat() {
-  contactFloat.hidden = contactDismissed || experience.getBoundingClientRect().bottom > 0 || contact.getBoundingClientRect().top < window.innerHeight;
+  contactFloat.hidden = contactDismissed || projects.getBoundingClientRect().bottom > 0;
 }
 contactFloat.querySelector('button').addEventListener('click', () => {
   contactDismissed = true;
