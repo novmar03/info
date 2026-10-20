@@ -343,3 +343,28 @@ h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spaci
 }
 @media print { .contact-float { display: none; } }
 .site-footer { padding-bottom: 124px; }
+
+/* Match the reference's balanced, compact first-screen composition. */
+.hero-main { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: clamp(48px, 8vw, 120px); }
+.hero-copy { padding-bottom: 0; }
+.hero h1 { font-size: clamp(72px, 8.3vw, 120px); }
+.hero-description { max-width: 52ch; font-size: 16px; }
+.profile-card { max-width: 480px; }
+.profile-brand { padding-block: 24px; gap: 10px; }
+.profile-body { padding: 38px 28px 40px; }
+.profile-photo { width: 62%; aspect-ratio: 1 / 1.08; margin-bottom: 28px; }
+.hero-footer { margin-top: 36px; }
+@media (max-width: 1050px) and (min-width: 651px) {
+  .hero-main { gap: 40px; }
+  .hero h1 { font-size: clamp(60px, 8.3vw, 87px); }
+  .profile-body { padding: 28px 16px; }
+  .profile-body h2 { font-size: 24px; }
+  .profile-photo { width: 70%; }
+}
+@media (max-width: 650px) {
+  .hero-main { grid-template-columns: 1fr; gap: 32px; }
+  .hero h1 { font-size: clamp(64px, 18vw, 112px); }
+  .profile-card { max-width: 390px; }
+  .profile-body { padding: 28px 22px 32px; }
+  .profile-photo { width: 70%; }
+}

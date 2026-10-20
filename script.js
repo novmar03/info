@@ -59,14 +59,9 @@ if (sportsTrack && !sportsTrack.closest('[hidden]')) {
 // Keep contact available from the end of projects through the footer.
 const contactFloat = document.querySelector('.contact-float');
 const projects = document.querySelector('#projects');
-let contactDismissed = false;
 function updateContactFloat() {
-  contactFloat.hidden = contactDismissed || projects.getBoundingClientRect().bottom > 0;
+  contactFloat.hidden = projects.getBoundingClientRect().bottom > window.innerHeight;
 }
-contactFloat.querySelector('button').addEventListener('click', () => {
-  contactDismissed = true;
-  updateContactFloat();
-});
 window.addEventListener('scroll', updateContactFloat, { passive: true });
 window.addEventListener('resize', updateContactFloat);
 updateContactFloat();
