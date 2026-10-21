@@ -8,16 +8,18 @@
   <title>Мария Новикова — Бизнес-аналитик в IT</title>
   <link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=cv1">
-  <script src="script.js?v=hero3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=audit1">
+  <script src="script.js?v=audit1" defer></script>
 </head>
 <body>
+<div class="page-scroll" id="page-scroll">
 <a class="skip-link" href="#main">Перейти к содержимому</a>
 <main>
 <div class="opening">
   <header class="site-header page-width">
     <a class="wordmark" href="#main" aria-label="Мария Новикова, начало">Мария Новикова</a>
-    <nav aria-label="Основная навигация"><a href="#experience">Опыт</a><a href="#projects">Pet-проекты</a><a href="#skills">Навыки</a><a href="#education">Образование</a><a href="#outside">Вне работы</a></nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Меню <span aria-hidden="true">＋</span></button>
+    <nav id="site-nav" aria-label="Основная навигация"><a href="#projects">Pet-проекты</a><a href="#experience">Опыт</a><a href="#skills">Навыки</a><a href="#education">Образование</a><a href="#outside">Вне работы</a></nav>
     <a class="header-contact" href="#contact">Связаться</a>
     <a class="cv-button" href="https://drive.google.com/file/d/1GNVm2iyyQ2VqqRC9CFSCqlfX5UJdpvl6/view?usp=sharing" target="_blank" rel="noopener noreferrer">pdf CV</a>
   </header>
@@ -36,11 +38,11 @@
   <div class="section-heading"><h2 id="projects-title">Pet-проекты</h2></div>
   <div class="project-grid">
     <article class="pet-project">
-      <div class="project-preview" data-project-preview="documentation"><div class="laptop-screen"><img src="assets/projects/documentation.png" width="1440" height="900" alt="Обновлённая документация CloudPayments: платёжный виджет" loading="lazy"></div><div class="laptop-base" aria-hidden="true"></div></div>
+      <a class="project-preview" data-project-preview="documentation" href="assets/projects/documentation.png" aria-label="Увеличить скриншот документации"><div class="laptop-screen"><img src="assets/projects/documentation.png" width="1440" height="900" alt="Обновлённая документация CloudPayments: платёжный виджет" loading="lazy"></div><div class="laptop-base" aria-hidden="true"></div><span class="preview-hint">Увеличить ↗</span></a>
       <div class="project-caption"><h3>Обновлённая документация</h3><p>Перенесла редактирование документации с команды разработки на продуктовую команду и сократила сроки внесения изменений (SLA).</p><a class="project-repository" href="https://github.com/novmar03/CloudPayments_documentation" target="_blank" rel="noopener noreferrer"><img src="assets/logos/github.svg" width="20" height="20" alt="">Репозиторий документации</a></div>
     </article>
     <article class="pet-project">
-      <div class="project-preview" data-project-preview="demo-shop"><div class="laptop-screen"><img src="assets/projects/demo-shop.png" width="1440" height="900" alt="Обновлённый демо-магазин CloudPayments: каталог товаров" loading="lazy"></div><div class="laptop-base" aria-hidden="true"></div></div>
+      <a class="project-preview" data-project-preview="demo-shop" href="assets/projects/demo-shop.png" aria-label="Увеличить скриншот демо-магазина"><div class="laptop-screen"><img src="assets/projects/demo-shop.png" width="1440" height="900" alt="Обновлённый демо-магазин CloudPayments: каталог товаров" loading="lazy"></div><div class="laptop-base" aria-hidden="true"></div><span class="preview-hint">Увеличить ↗</span></a>
       <div class="project-caption"><h3>Обновлённый демо-магазин</h3><p>Реализовала платёжные сценарии, чтобы ускорить разработку и улучшить пользовательский опыт.</p><a class="project-repository" href="https://github.com/novmar03/demo-shop" target="_blank" rel="noopener noreferrer"><img src="assets/logos/github.svg" width="20" height="20" alt="">Репозиторий демо-магазина</a></div>
     </article>
   </div>
@@ -48,12 +50,11 @@
 <section id="experience" class="experience section-space" aria-labelledby="experience-title">
   <div class="page-width">
     <div class="section-heading"><h2 id="experience-title">Опыт и результаты</h2></div>
-    <div class="team-switcher" role="group" aria-label="Выбрать команду" hidden><button type="button" data-select-team="0" aria-pressed="true" aria-controls="team-0">CloudPayments</button><button type="button" data-select-team="1" aria-pressed="false" aria-controls="team-1">Сбербанк</button><button type="button" data-select-team="2" aria-pressed="false" aria-controls="team-2">Sber AI</button></div>
     <div class="job-panels"><div class="job-panel" id="team-0" data-team="0">
  <div class="job-heading"><div class="job-brand"><span class="sber-brand"><img class="cloud-logo" src="assets/logos/cloudpayments.svg" width="36" height="36" alt="">CloudPayments</span><p>Группа Т-банка</p></div><div><h3>Бизнес-аналитик</h3><p>Платёжные интерфейсы интернет-эквайринга</p></div><p class="job-date">Январь 2026 — настоящее время</p></div>
  <div class="cases">
-   <article class="case"><div class="case-copy"><h4>Ведение проекта кастомизации интерфейсов</h4><p>Веду крупный проект кастомизации платёжных интерфейсов: на этапе discovery анализирую рынок, прорабатываю решение и формулирую чёткие бизнес-требования; на этапе delivery контролирую сроки и приоритизирую задачи в бэклоге по RICE. Благодаря приоритизации удалось привлечь 4 мерчанта L+ сегмента с суммарной прибылью 2,5 млн ₽ в месяц.</p></div><div class="case-result"><strong>2,5 млн ₽/мес.</strong><span>прибыли от 4 мерчантов L+ сегмента</span></div></article>
-   <article class="case"><div class="case-copy"><h4>Реализация функционала подписок в модулях CMS/CRM</h4><p>Реализовала рекуррентные платежи — УТП продукта: ранее на рынке CMS/CRM не было подобного решения. Благодаря реализации вебхуков (webhooks) удалось обеспечить автоматизированные списания по карточному токену. Функциональность привлекла 10+ мерчантов S–M сегмента и принесла дополнительную прибыль 300 тыс. ₽ в месяц.</p></div><div class="case-result"><strong>+300 тыс. ₽/мес.</strong><span>дополнительной прибыли от 10+ мерчантов S–M сегмента</span></div></article>
+   <article class="case"><div class="case-copy"><h4>Ведение проекта кастомизации интерфейсов</h4><p>Веду крупный проект кастомизации платёжных интерфейсов: на этапе discovery анализирую рынок, прорабатываю решение и формулирую чёткие бизнес-требования; на этапе delivery контролирую сроки и приоритизирую задачи в бэклоге по RICE. Приоритизация помогла привлечь мерчантов L+ сегмента.</p></div><div class="case-result"><strong>2,5 млн ₽</strong><span class="metric-period">прибыли в месяц</span><span>от 4 мерчантов L+ сегмента</span></div></article>
+   <article class="case"><div class="case-copy"><h4>Реализация функционала подписок в модулях CMS/CRM</h4><p>Реализовала рекуррентные платежи — УТП продукта: ранее на рынке CMS/CRM не было подобного решения. Благодаря реализации вебхуков (webhooks) удалось обеспечить автоматизированные списания по карточному токену и привлечь мерчантов S–M сегмента.</p></div><div class="case-result"><strong>+300 тыс. ₽</strong><span class="metric-period">прибыли в месяц</span><span>от 10+ мерчантов S–M сегмента</span></div></article>
    <article class="case"><div class="case-copy"><h4>Вайбкодинг редактора технической документации и перенос на новый фреймворк</h4><p>Раньше редактирование публичной технической документации требовало участия команды разработки: это занимало время разработчиков и увеличивало сроки внесения изменений (SLA). Проанализировала рыночные решения и конкурентов, выбрала оптимальный фреймворк и перенесла на него документацию. Затем с помощью вайбкодинга реализовала no-code редактор, который позволяет продуктовой команде самостоятельно редактировать документацию.</p></div></article>
  </div></div><div class="job-panel" id="team-1" data-team="1">
  <div class="job-heading"><div class="job-brand"><span class="sber-brand"><img src="assets/logos/sber.svg" width="36" height="36" alt="">Сбер</span><p>ПАО СБЕРБАНК</p></div><div><h3>Бизнес-аналитик</h3><p>Продуктовая команда Portal DA</p></div><p class="job-date">Декабрь 2024 — январь 2026</p></div>
@@ -64,10 +65,11 @@
 </section>
 
 <section id="skills" class="skills section-space" aria-labelledby="skills-title">
-  <div class="page-width"><div class="section-heading"><h2 id="skills-title">Hard Skills</h2></div><div class="skills-layout"><div class="skill-group"><h3>Продуктовая часть</h3><ul><li>Product discovery</li><li>Анализ рынка</li><li>Продуктовые гипотезы и метрики</li><li>RICE / MoSCoW</li></ul></div><div class="skill-group"><h3>Экономика</h3><ul><li>Юнит-экономика</li><li>Построение финансовых моделей</li></ul></div><div class="skill-group"><h3>Моделирование и IT</h3><ul><li>BPMN / PlantUML</li><li>UML: Sequence, Use Case,State Machine</li><li>REST API</li><li>Figma</li></ul></div></div></div>
+  <div class="page-width"><div class="section-heading"><h2 id="skills-title">Навыки</h2></div><div class="skills-layout"><div class="skill-group"><h3>Продуктовая часть</h3><ul><li>Product discovery</li><li>Анализ рынка</li><li>Продуктовые гипотезы и метрики</li><li>RICE / MoSCoW</li></ul></div><div class="skill-group"><h3>Экономика</h3><ul><li>Юнит-экономика</li><li>Построение финансовых моделей</li></ul></div><div class="skill-group"><h3>Моделирование и IT</h3><ul><li>BPMN / PlantUML</li><li>UML: Sequence, Use Case, State Machine</li><li>REST API</li><li>Figma</li></ul></div></div></div>
 </section>
 <section id="education" class="education section-space page-width" aria-labelledby="education-title">
-  <div class="education-intro"><h2 id="education-title">Образование</h2><img class="msu-logo" src="assets/logos/msu.png" width="200" height="85" alt="Главное здание МГУ"><h3>МГУ имени<br> М. В. Ломоносова</h3><p>Экономический факультет</p></div>
+  <h2 id="education-title">Образование</h2>
+  <div class="education-intro"><img class="msu-logo" src="assets/logos/msu.png" width="200" height="85" alt="Главное здание МГУ"><h3>МГУ имени<br> М. В. Ломоносова</h3><p>Экономический факультет</p></div>
   <div class="education-records"><article><p class="study-date">2025–2027</p><h3>Поведенческая экономика и институты</h3><p>Магистратура</p></article><article><p class="study-date">2021–2025</p><h3>Экономика</h3><p>Бакалавриат</p></article></div>
   <figure class="education-photo"><img src="assets/photos/sports/diplom.webp" width="1206" height="1468" alt="Мария Новикова с дипломом МГУ" loading="lazy"></figure>
 </section>
@@ -86,6 +88,8 @@
 <section id="contact" class="contact section-space" aria-labelledby="contact-title"><div class="page-width"><div class="section-heading"><h2 id="contact-title">Контакты</h2></div><a class="contact-email" href="mailto:novmar072003@list.ru">novmar072003<wbr>@list.ru</a><div class="contact-bottom"><div class="contact-socials"><div class="social-links"><a href="https://t.me/novmar03" target="_blank" rel="noopener noreferrer"><img src="assets/logos/telegram.svg" width="20" height="20" alt=""><span>Telegram</span></a><a href="https://www.linkedin.com/in/мария-новикова-01b478425?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer"><img src="assets/logos/linkedin.svg" width="20" height="20" alt=""><span>LinkedIn</span></a><a href="https://github.com/novmar03" target="_blank" rel="noopener noreferrer"><img src="assets/logos/github.svg" width="20" height="20" alt=""><span>GitHub</span></a></div><a class="cv-button" href="https://drive.google.com/file/d/1GNVm2iyyQ2VqqRC9CFSCqlfX5UJdpvl6/view?usp=sharing" target="_blank" rel="noopener noreferrer">pdf CV</a></div><a class="phone" href="tel:+79166722085">+7 (916) 672-20-85</a></div></div></section>
 </main>
 <footer class="site-footer page-width"><p>© 2026 Мария Новикова</p><a href="#main">К началу</a></footer>
+</div>
+<dialog class="preview-dialog" aria-labelledby="preview-title"><div class="preview-toolbar"><h2 id="preview-title">Предпросмотр проекта</h2><button type="button" class="preview-close" aria-label="Закрыть изображение">Закрыть ×</button></div><img alt=""></dialog>
 <aside class="contact-float" aria-label="Быстрая связь" hidden><span>Связаться со мной</span><a href="https://t.me/novmar03" target="_blank" rel="noopener noreferrer"><img src="assets/logos/telegram.svg" width="20" height="20" alt="">Написать в Telegram</a></aside>
 </body>
 </html>

@@ -12,7 +12,7 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: .08 });
-  document.querySelectorAll('h1,.hero-bottom,.section-heading,.case,.pet-project,.skill-group,.education-intro,.education-records article,.photo-gallery,.contact-email').forEach(element => entrance.observe(element));
+  document.querySelectorAll('h1,.hero-bottom,.section-heading,.case,.pet-project,.skill-group,.education-intro,.education-records article,.contact-email').forEach(element => entrance.observe(element));
 }
 
 // Native horizontal scrolling remains available without JavaScript.
@@ -59,9 +59,52 @@ if (sportsTrack && !sportsTrack.closest('[hidden]')) {
 // Keep contact available from the end of projects through the footer.
 const contactFloat = document.querySelector('.contact-float');
 const projects = document.querySelector('#projects');
+const pageScroll = document.querySelector('.page-scroll');
+document.body.classList.add('enhanced-layout');
 function updateContactFloat() {
-  contactFloat.hidden = projects.getBoundingClientRect().bottom > window.innerHeight;
+  // Use the full viewport threshold so reserving dock space cannot toggle it back off.
+  const visible = projects.getBoundingClientRect().bottom <= window.innerHeight;
+  contactFloat.hidden = !visible;
+  document.body.classList.toggle('contact-visible', visible);
 }
-window.addEventListener('scroll', updateContactFloat, { passive: true });
+pageScroll.addEventListener('scroll', updateContactFloat, { passive: true });
 window.addEventListener('resize', updateContactFloat);
+new ResizeObserver(updateContactFloat).observe(projects);
 updateContactFloat();
+
+const menuToggle = document.querySelector('.menu-toggle');
+const header = document.querySelector('.site-header');
+const mobileMenu = window.matchMedia('(max-width: 650px)');
+menuToggle.hidden = false;
+function closeMenu() {
+  header.classList.remove('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}
+menuToggle.addEventListener('click', () => {
+  const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+  header.classList.toggle('menu-open', open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+});
+header.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+header.addEventListener('keydown', event => {
+  if (event.key === 'Escape') { closeMenu(); menuToggle.focus(); }
+});
+mobileMenu.addEventListener('change', closeMenu);
+
+const preview = document.querySelector('.preview-dialog');
+const previewImage = preview.querySelector('img');
+document.querySelectorAll('.project-preview').forEach(link => {
+  link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !preview.showModal) return;
+    event.preventDefault();
+    previewImage.src = link.href;
+    previewImage.alt = link.querySelector('img').alt;
+    preview.querySelector('h2').textContent = link.closest('article').querySelector('h3').textContent;
+    preview.showModal();
+  });
+});
+preview.querySelector('.preview-close').addEventListener('click', () => preview.close());
+preview.addEventListener('click', event => {
+  const bounds = preview.getBoundingClientRect();
+  if (event.target === preview && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) preview.close();
+});
