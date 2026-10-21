@@ -39,6 +39,10 @@ h3,h4 { font-size: var(--lead); font-weight: 550; line-height: 1.25; letter-spac
 .site-header nav a, .header-contact { padding-block: 12px; }
 .site-header a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .header-contact { font-size: var(--small); margin-left: 32px; }
+.cv-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px; border: 1px solid #ffffff50; border-radius: 100px; font-size: var(--small); white-space: nowrap; transition: background .2s; }
+.cv-button:hover { background: #ffffff12; }
+.contact-socials { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.contact-bottom > .phone { align-self: flex-start; }
 .hero { padding-top: 38px; padding-bottom: 32px; }
 h1 { font-size: var(--display); font-weight: 600; line-height: .95; letter-spacing: -.075em; }
 .hero-bottom { margin-top: 42px; display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
